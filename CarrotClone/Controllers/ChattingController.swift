@@ -16,6 +16,7 @@ class ChattingController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setNavigationBar()
         
         chatTableView.dataSource = self
         chatTableView.rowHeight = 80
@@ -46,6 +47,37 @@ extension ChattingController: UITableViewDataSource {
         return cell
     }
 }
+
+
+extension ChattingController {
+    func setNavigationBar() {
+        navigationController?.navigationBar.backgroundColor = UIColor(red: 33/255, green: 33/255, blue: 35/255, alpha: 1)
+        navigationController?.navigationBar.isTranslucent = false
+        configureNavigationTitle()
+        configureNavigationButton()
+    }
+    
+    func configureNavigationTitle() {
+        let titleLabel = UILabel()
+        titleLabel.textColor = .white
+        titleLabel.text = "채팅"
+        titleLabel.font = .systemFont(ofSize: 20, weight: .bold)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: titleLabel)
+    }
+    
+    func configureNavigationButton() {
+        let scanQRButton = UIBarButtonItem(image: UIImage(systemName: "qrcode.viewfinder"), style: .plain, target: self, action: nil)
+        scanQRButton.tintColor = .white
+        scanQRButton.customView?.translatesAutoresizingMaskIntoConstraints = false
+        
+        let notificationButton = UIBarButtonItem(image: UIImage(systemName: "bell"), style: .plain, target: self, action: nil)
+        notificationButton.tintColor = .white
+        notificationButton.customView?.translatesAutoresizingMaskIntoConstraints = false
+
+        self.navigationItem.rightBarButtonItems = [notificationButton, scanQRButton]
+    }
+}
+
 
 
 

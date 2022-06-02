@@ -28,6 +28,7 @@ class MyPageCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.addSubview(label)
         contentView.addSubview(iconImageView)
+        contentView.backgroundColor = UIColor(red: 33/255, green: 33/255, blue: 35/255, alpha: 1)
     }
     
     required init?(coder: NSCoder) {
@@ -36,13 +37,15 @@ class MyPageCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        let size: CGFloat = contentView.frame.size.height - 12
-        iconImageView.frame = CGRect(x: 10, y: 6, width: size, height: size)
+        let size: CGFloat = contentView.frame.size.height - 20
+        iconImageView.frame = CGRect(x: 20, y: 10, width: size, height: size)
+        iconImageView.tintColor = .white
         
-        label.frame = CGRect(x: 15 + iconImageView.frame.size.width,
+        label.frame = CGRect(x: 38 + iconImageView.frame.size.width,
                              y: 0,
                              width: contentView.frame.size.width - 15 - iconImageView.frame.size.width,
                              height: contentView.frame.size.height)
+        label.textColor = .white
     }
     
     override func prepareForReuse() {

@@ -188,23 +188,7 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="OAW-vz-H0f">
-                        <rightBarButtonItems>
-                            <barButtonItem image="bell" catalog="system" id="MXa-Wl-oYk" userLabel="alarm">
-                                <inset key="imageInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </barButtonItem>
-                            <barButtonItem id="3lj-6F-tbH" userLabel="category">
-                                <imageReference key="image" image="list.bullet" catalog="system" symbolScale="large"/>
-                                <inset key="imageInsets" minX="40" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </barButtonItem>
-                            <barButtonItem title="Item" image="magnifyingglass" catalog="system" id="XJc-mN-kbA" userLabel="search">
-                                <inset key="imageInsets" minX="70" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </barButtonItem>
-                        </rightBarButtonItems>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="OAW-vz-H0f"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="marketTableView" destination="rgI-j7-Mgc" id="oUs-2J-sdc"/>
@@ -234,69 +218,39 @@
         <!--DailyLIfe-->
         <scene sceneID="ds6-iQ-jLF">
             <objects>
-                <viewController title="DailyLIfe" id="bZ1-xn-80R" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DailyLifeController" title="DailyLIfe" id="bZ1-xn-80R" customClass="DailyLifeController" customModule="CarrotClone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oXi-qB-vKa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="s6c-Ud-h0U"/>
                         <color key="backgroundColor" red="0.12854406239999999" green="0.12847512959999999" blue="0.13793617490000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
-                    <navigationItem key="navigationItem" id="WJh-qQ-pwl">
-                        <rightBarButtonItems>
-                            <barButtonItem title="Item" image="bell" catalog="system" id="qjV-Mi-ZFl">
-                                <inset key="imageInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </barButtonItem>
-                            <barButtonItem image="list.star" catalog="system" id="y96-2c-w4y">
-                                <inset key="imageInsets" minX="40" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </barButtonItem>
-                            <barButtonItem image="magnifyingglass" catalog="system" id="Eg9-Lc-DNS">
-                                <inset key="imageInsets" minX="70" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </barButtonItem>
-                        </rightBarButtonItems>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="WJh-qQ-pwl"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OvC-WJ-jG4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2100" y="1808"/>
         </scene>
-        <!--NearBy-->
+        <!--NearByController-->
         <scene sceneID="0SR-uR-qkN">
             <objects>
-                <viewController title="NearBy" id="wcz-7W-jiy" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NearByController" title="NearByController" id="wcz-7W-jiy" customClass="NearByController" customModule="CarrotClone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IGS-iy-jxQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="Kni-ZS-wHX"/>
                         <color key="backgroundColor" red="0.12854406239999999" green="0.12847512959999999" blue="0.13793617490000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
-                    <navigationItem key="navigationItem" id="bfF-5a-nWj">
-                        <rightBarButtonItems>
-                            <barButtonItem image="bell" catalog="system" id="bF3-ws-Oxt">
-                                <inset key="imageInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </barButtonItem>
-                            <barButtonItem image="qrcode.viewfinder" catalog="system" id="zxv-iq-Z5C">
-                                <inset key="imageInsets" minX="40" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </barButtonItem>
-                            <barButtonItem image="highlighter" catalog="system" id="2sr-6I-DmV">
-                                <inset key="imageInsets" minX="70" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </barButtonItem>
-                        </rightBarButtonItems>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="bfF-5a-nWj"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L4W-jh-QE6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1302" y="1808"/>
         </scene>
-        <!--MyCarrot-->
+        <!--ChattingController-->
         <scene sceneID="W5D-lY-rxk">
             <objects>
-                <viewController storyboardIdentifier="ChattingController" title="MyCarrot" id="LV1-Ym-1tb" customClass="ChattingController" customModule="CarrotClone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChattingController" title="ChattingController" id="LV1-Ym-1tb" customClass="ChattingController" customModule="CarrotClone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JPt-XI-mMS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -400,18 +354,7 @@
                             <constraint firstItem="8cQ-Gv-xnK" firstAttribute="trailing" secondItem="w3d-XB-RL7" secondAttribute="trailing" id="M8z-VI-Av3"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="O4L-YG-8VX">
-                        <rightBarButtonItems>
-                            <barButtonItem image="bell" catalog="system" id="ek0-Wu-F18">
-                                <inset key="imageInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </barButtonItem>
-                            <barButtonItem title="Item" image="qrcode.viewfinder" catalog="system" id="kxw-j1-gFJ">
-                                <inset key="imageInsets" minX="40" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </barButtonItem>
-                        </rightBarButtonItems>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="O4L-YG-8VX"/>
                     <connections>
                         <outlet property="chatTableView" destination="w3d-XB-RL7" id="zE4-yz-bAK"/>
                     </connections>
@@ -430,15 +373,11 @@
                         <viewLayoutGuide key="safeArea" id="9LK-0P-RQk"/>
                         <color key="backgroundColor" red="0.12854406239999999" green="0.12847512959999999" blue="0.13793617490000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
-                    <navigationItem key="navigationItem" id="6fS-tE-tD8">
-                        <barButtonItem key="rightBarButtonItem" image="gearshape.circle" catalog="system" id="fD7-vH-J3Q">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="6fS-tE-tD8"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="THM-yC-442" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="422" y="1809"/>
+            <point key="canvasLocation" x="421.73913043478262" y="1808.7053571428571"/>
         </scene>
         <!--내 근처-->
         <scene sceneID="eYE-g5-JhN">
@@ -493,24 +432,17 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bell" catalog="system" width="128" height="124"/>
         <image name="bubble.left.and.bubble.right" catalog="system" width="128" height="96"/>
         <image name="bubble.left.and.bubble.right.fill" catalog="system" width="128" height="97"/>
-        <image name="gearshape.circle" catalog="system" width="128" height="121"/>
         <image name="heart" catalog="system" width="128" height="109"/>
-        <image name="highlighter" catalog="system" width="128" height="119"/>
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
-        <image name="list.bullet" catalog="system" width="128" height="88"/>
-        <image name="list.star" catalog="system" width="128" height="94"/>
-        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="mappin.circle" catalog="system" width="128" height="121"/>
         <image name="mappin.circle.fill" catalog="system" width="128" height="121"/>
         <image name="newspaper" catalog="system" width="128" height="111"/>
         <image name="newspaper.fill" catalog="system" width="128" height="111"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
-        <image name="qrcode.viewfinder" catalog="system" width="128" height="115"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
