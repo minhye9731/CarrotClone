@@ -8,6 +8,18 @@
 import UIKit
 
 class MarketCell: UITableViewCell {
+    
+    var product: Market? {
+        didSet {
+            guard let product = product else { return }
+            sellingImage.image = product.sellingImage
+            productNameLabel.text = product.productName
+            sellerLocationLabel.text = product.sellerLocation
+            postDateLabel.text = product.postDate
+            productPriceLabel.text = product.productPrice
+            likenumberLabel.text = product.likenumber
+        }
+    }
 
     @IBOutlet weak var sellingImage: UIImageView!
     @IBOutlet weak var productNameLabel: UILabel!
@@ -27,6 +39,15 @@ class MarketCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    public func updateUI(cellData: [Market]) {
+        self.sellingImage.image = product?.sellingImage
+        self.productNameLabel.text = product?.productName
+        self.sellerLocationLabel.text = product?.sellerLocation
+        self.postDateLabel.text = product?.postDate
+        self.productPriceLabel.text = product?.productPrice
+        self.likenumberLabel.text = product?.likenumber
     }
 
 }

@@ -8,8 +8,21 @@
 import UIKit
 
 class DataManager {
-    var chatDataArray: [Chat] = []
-    var marketDataArray: [Market] = []
+    private var marketDataArray: [Market] = []
+    private var chatDataArray: [Chat] = []
+    
+    func makeMarketData() {
+        marketDataArray = [
+            Market(sellingImage: UIImage(named: "selling1.pnf")!, productName: "원목 테이블 의자 세트 판매합니다.", sellerLocation: "연남동", postDate: "7분 전", productPrice: "100,000원", likenumber: "18"),
+            Market(sellingImage: UIImage(named: "selling2.pnf")!, productName: "탁상용 선풍기", sellerLocation: "여의도동", postDate: "11분 전", productPrice: "8,000원", likenumber: "3"),
+            Market(sellingImage: UIImage(named: "selling3.pnf")!, productName: "블랙 기계식 키보드 사실 분", sellerLocation: "필동", postDate: "30분 전", productPrice: "5,000원", likenumber: "25"),
+            Market(sellingImage: UIImage(named: "selling4.pnf")!, productName: "포케몬 스티커!!", sellerLocation: "서교동", postDate: "23시간 전", productPrice: "1,000원", likenumber: "2"),
+            Market(sellingImage: UIImage(named: "selling5.pnf")!, productName: "회색 후드티 1번입음", sellerLocation: "동교동", postDate: "1일 전", productPrice: "20,000원", likenumber: "4"),
+            Market(sellingImage: UIImage(named: "selling6.pnf")!, productName: "iptime 와이파이 공유기 + 랜선", sellerLocation: "연남동", postDate: "7분 전", productPrice: "15,000원", likenumber: "33"),
+            Market(sellingImage: UIImage(named: "selling1.pnf")!, productName: "원목 테이블 의자 세트 판매합니다.", sellerLocation: "연남동", postDate: "7분 전", productPrice: "100,000원", likenumber: "18"),
+            Market(sellingImage: UIImage(named: "selling2.pnf")!, productName: "원목 테이블 의자 세트 판매합니다.", sellerLocation: "연남동", postDate: "7분 전", productPrice: "100,000원", likenumber: "18")
+        ]
+    }
     
     func makechatData() {
         chatDataArray = [
@@ -26,20 +39,36 @@ class DataManager {
         ]
     }
     
-    func makeMarketData() {
-        marketDataArray = [
-            Market(sellingImage: UIImage(named: "selling1.pnf")!, productName: "원목 테이블 의자 세트 판매합니다.", sellerLocation: "연남동", postDate: "7분 전", productPrice: "100,000원", likenumber: "18"),
-            Market(sellingImage: UIImage(named: "selling2.pnf")!, productName: "탁상용 선풍기", sellerLocation: "여의도동", postDate: "11분 전", productPrice: "8,000원", likenumber: "3"),
-            Market(sellingImage: UIImage(named: "selling3.pnf")!, productName: "블랙 기계식 키보드 사실 분", sellerLocation: "필동", postDate: "30분 전", productPrice: "5,000원", likenumber: "25"),
-            Market(sellingImage: UIImage(named: "selling4.pnf")!, productName: "포케몬 스티커!!", sellerLocation: "서교동", postDate: "23시간 전", productPrice: "1,000원", likenumber: "2"),
-            Market(sellingImage: UIImage(named: "selling5.pnf")!, productName: "회색 후드티 1번입음", sellerLocation: "동교동", postDate: "1일 전", productPrice: "20,000원", likenumber: "4"),
-            Market(sellingImage: UIImage(named: "selling6.pnf")!, productName: "iptime 와이파이 공유기 + 랜선", sellerLocation: "연남동", postDate: "7분 전", productPrice: "15,000원", likenumber: "33"),
-            Market(sellingImage: UIImage(named: "selling1.pnf")!, productName: "원목 테이블 의자 세트 판매합니다.", sellerLocation: "연남동", postDate: "7분 전", productPrice: "100,000원", likenumber: "18"),
-            Market(sellingImage: UIImage(named: "selling2.pnf")!, productName: "원목 테이블 의자 세트 판매합니다.", sellerLocation: "연남동", postDate: "7분 전", productPrice: "100,000원", likenumber: "18")
-        ]
+    // R - 전체 데이터 목록 얻기
+    public func getMarketData() -> [Market] {
+        return marketDataArray
     }
+    public func getchatData() -> [Chat] {
+        return chatDataArray
+    }
+
+    // C - 새로운 목록 만들기
+    public func addMarketData() {
+        let newProduct = Market(sellingImage: UIImage(named: "selling5.png")!, productName: "회색 후드티 1번입음", sellerLocation: "동교동", postDate: "1일 전", productPrice: "20,000원", likenumber: "4")
+        marketDataArray.append(newProduct)
+    }
+
+    // U - 기존 목록의 새로운 정보 업데이트
+    public func updateMarketInfo(Index: Int, _ market: Market) {
+        marketDataArray[Index] = market
+    }
+
     
-    func getchatData() -> [Chat] { return chatDataArray }
-    func getMarketData() -> [Market] { return marketDataArray }
+    // D - 특정 멤버의 정보 삭제하기
+//    public func delete() {
+//
+//    }
     
+    // 특정 멤버 얻기 (굳이 필요는 없지만, 서브스크립트 구현해보기)
+    subscript(index: Int) -> Market{
+        get {
+            return marketDataArray[index]
+        }
+    }
+
 }

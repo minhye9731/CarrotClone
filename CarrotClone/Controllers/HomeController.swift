@@ -7,23 +7,60 @@
 
 import UIKit
 
-class HomeController: UIViewController {
+final class HomeController: UIViewController {
+    
+    @IBOutlet weak var marketTableView: UITableView!
     
     var marketDataManager = DataManager()
-
-    @IBOutlet weak var marketTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor(red: 33/255, green: 33/255, blue: 35/255, alpha: 1)
+        setupDatas()
+        setupTableView()
+        configurePlusButton()
         setNavigationBar()
-        marketTableView.dataSource = self
-        marketTableView.rowHeight = 140
-        
+    }
+    
+    // MARK: - 서버에서 데이터 요청
+    func setupDatas() {
         marketDataManager.makeMarketData()
     }
+    
+    // MARK: - 테이블뷰 세팅
+    func setupTableView() {
+        marketTableView.dataSource = self
+        marketTableView.delegate = self
+        marketTableView.rowHeight = 140
+    }
+    
+    // MARK: - 플러스 버튼 설정
+    func configurePlusButton() {
+        let plusButton = UIButton()
+        let configuration = UIImage.SymbolConfiguration(pointSize: 23, weight: .semibold)
+        
+        plusButton.setImage(UIImage(systemName: "plus", withConfiguration: configuration), for: .normal)
+        plusButton.tintColor = .white
+        plusButton.backgroundColor = .orange
+        plusButton.frame = CGRect(x: 310, y: 590, width: 60, height: 60)
+        plusButton.layer.cornerRadius = plusButton.bounds.height / 2
+        plusButton.clipsToBounds = true
+        
+        view.addSubview(plusButton)
+        plusButton.addTarget(self, action: #selector(plusButtonTapped), for: .touchUpInside)
+    }
+    
+    // + 버튼 눌렀을
+    @objc func plusButtonTapped(_ sender: UIButton) {
+        // 데이터를 추가한다.
+        marketDataManager.addMarketData()
+//        tableView.reloadData()
+    }
+    
 }
 
-extension HomeController: UITableViewDataSource {
+// MARK: - tableview 상세설정
+extension HomeController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return marketDataManager.getMarketData().count
     }
@@ -31,21 +68,33 @@ extension HomeController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MarketCell", for: indexPath) as! MarketCell
         
-        let array = marketDataManager.getMarketData()
-        let market = array[indexPath.row]
+        cell.updateUI(cellData: marketDataManager.getMarketData())
         
-        cell.sellingImage.image = market.sellingImage
-        cell.productNameLabel.text = market.productName
-        cell.sellerLocationLabel.text = market.sellerLocation
-        cell.postDateLabel.text = market.postDate
-        cell.productPriceLabel.text = market.productPrice
-        cell.likenumberLabel.text = market.likenumber
+        cell.product = marketDataManager[indexPath.row]
         cell.selectionStyle = .none
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "toDetail", sender: indexPath)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetail" {
+            let detailVC = segue.destination as! ProductDetailController
+            
+            let array = marketDataManager.getMarketData()
+            
+            let indexPath = sender as! IndexPath
+            
+            detailVC.product = array[indexPath.row]
+        }
+    }
+    
 }
 
+// MARK: - navigation bar 상세설정
 extension HomeController {
     func setNavigationBar() {
         navigationController?.navigationBar.backgroundColor = UIColor(red: 33/255, green: 33/255, blue: 35/255, alpha: 1)

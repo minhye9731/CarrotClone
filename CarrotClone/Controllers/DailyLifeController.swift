@@ -12,11 +12,29 @@ class DailyLifeController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationBar()
-
+        configurePlusButton()
         
     }
     
+    func configurePlusButton() {
+        let plusButton = UIButton()
+        let configuration = UIImage.SymbolConfiguration(pointSize: 23, weight: .semibold)
+        
+        plusButton.setImage(UIImage(systemName: "plus", withConfiguration: configuration), for: .normal)
+        plusButton.tintColor = .white
+        plusButton.backgroundColor = .orange
+        plusButton.frame = CGRect(x: 310, y: 590, width: 60, height: 60)
+        plusButton.layer.cornerRadius = plusButton.bounds.height / 2
+        plusButton.clipsToBounds = true
+        
+        view.addSubview(plusButton)
+//        plusButton.addTarget(self, action: #selector(plusButtonTapped), for: .touchUpInside)
 
+    }
+    
+    @objc func plusButtonTapped() {
+        
+    }
     
     
 }

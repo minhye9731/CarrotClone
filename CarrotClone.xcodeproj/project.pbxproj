@@ -22,6 +22,7 @@
 		0E7F5DD028464F9C00D130DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E7F5DCE28464F9C00D130DA /* Main.storyboard */; };
 		0E7F5DD228464F9E00D130DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E7F5DD128464F9E00D130DA /* Assets.xcassets */; };
 		0E7F5DD528464F9E00D130DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E7F5DD328464F9E00D130DA /* LaunchScreen.storyboard */; };
+		0ED12A6B2849EA01007EB25C /* ProductDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED12A6A2849EA01007EB25C /* ProductDetailController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		0E7F5DD128464F9E00D130DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0E7F5DD428464F9E00D130DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E7F5DD628464F9E00D130DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0ED12A6A2849EA01007EB25C /* ProductDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,8 +70,8 @@
 			isa = PBXGroup;
 			children = (
 				0E7F5DCE28464F9C00D130DA /* Main.storyboard */,
-				0E0F2BA22847422700322113 /* ChatCell.swift */,
 				0E0F2BA628477DF600322113 /* MarketCell.swift */,
+				0E0F2BA22847422700322113 /* ChatCell.swift */,
 				0E0F2BAC2848FF3700322113 /* MyPageCell.swift */,
 			);
 			path = Views;
@@ -79,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				0E0F2BA428476BA800322113 /* HomeController.swift */,
+				0ED12A6A2849EA01007EB25C /* ProductDetailController.swift */,
 				0E0F2BAE2849489E00322113 /* DailyLifeController.swift */,
 				0E0F2BB028494A2200322113 /* NearByController.swift */,
 				0E0F2B9A28472F6E00322113 /* ChattingController.swift */,
@@ -193,6 +196,7 @@
 				0E0F2B9B28472F6E00322113 /* ChattingController.swift in Sources */,
 				0E0F2BB128494A2200322113 /* NearByController.swift in Sources */,
 				0E0F2BA728477DF600322113 /* MarketCell.swift in Sources */,
+				0ED12A6B2849EA01007EB25C /* ProductDetailController.swift in Sources */,
 				0E0F2BAB2848DDBD00322113 /* MyPageController.swift in Sources */,
 				0E7F5DC928464F9C00D130DA /* AppDelegate.swift in Sources */,
 				0E0F2BA528476BA800322113 /* HomeController.swift in Sources */,
